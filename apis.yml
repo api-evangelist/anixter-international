@@ -1,7 +1,12 @@
 aid: anixter-international
-url: https://raw.githubusercontent.com/api-evangelist/anixter-international/refs/heads/main/apis.yml
+url: 
+  https://raw.githubusercontent.com/api-evangelist/anixter-international/refs/heads/main/apis.yml
 modified: '2026-03-23'
 apis: []
 common:
   - type: Website
     url: https://www.anixter-international.com
+description: >-
+  Anixter International is a leading global distributor of network and security solutions,
+  electrical and electronic solutions, and utility power solutions for industrial
+  and OEM customers.
