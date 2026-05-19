@@ -41,6 +41,8 @@ type: Index
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/wescoanixter
   - url: https://www.anixter.com/en_us.html
     name: Anixter Website (now Wesco)
     type: Website
