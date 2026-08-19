@@ -81,7 +81,7 @@ common:
     type: Contact
 created: '2026-03-23'
 modified: '2026-04-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 description: >-
   Anixter International was a leading global distributor of network and security
   solutions, electrical and electronic solutions, and utility power solutions.
