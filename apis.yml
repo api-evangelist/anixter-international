@@ -8,6 +8,15 @@ apis:
       - Catalog
       - Distribution
       - EDI
+      - E-Commerce
+      - Integration
+      - Procurement
+      - Punchout
+    tags_raw:
+      - B2B Commerce
+      - Catalog
+      - Distribution
+      - EDI
       - Ecommerce
       - Integration
       - Procurement
