@@ -74,6 +74,11 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/anixter-international.png
 access: 3rd-Party
 common:
+  - type: ParentCompany
+    url: https://apis.io/providers/wesco-international/
+    name: Wesco International
+    x-relationship: acquired
+    x-evidence: "In June 2020, Anixter was acquired by Wesco International for approximately $4."
   - type: DomainSecurity
     url: security/anixter-international-domain-security.yml
   - type: LinkedIn
