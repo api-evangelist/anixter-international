@@ -1,0 +1,41 @@
+generated: '2026-09-02'
+method: searched
+source: >-
+  Live probes of api.wesco.com/mcp, /sse, /v1/mcp; Anypoint Exchange public asset API;
+  web search for an Anixter or Wesco MCP server
+provider: Anixter International
+providerId: anixter-international
+description: >-
+  Model Context Protocol posture for Anixter International (Wesco Anixter). No MCP
+  server exists — neither a hosted remote endpoint nor a distributable stdio package —
+  and none could be derived, because the provider publishes no OpenAPI, GraphQL SDL or
+  other machine-readable contract from which candidate tools could be honestly grounded.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: searched
+tools: []
+tool_count: 0
+probes:
+  - url: https://api.wesco.com/mcp
+    method: POST
+    body: '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
+    status: 404
+  - url: https://api.wesco.com/sse
+    method: POST
+    status: 404
+  - url: https://api.wesco.com/v1/mcp
+    method: POST
+    status: '<no response>'
+  - url: https://anypoint.mulesoft.com/exchange/api/v2/assets?domain=anixter&limit=50
+    method: GET
+    status: 200
+    result: '[] — the Anixter Anypoint Exchange organization publishes zero public assets'
+note: >-
+  No MCPServer pointer is emitted in apis.yml. mode is none, so a pointer would credit an
+  agent surface that does not exist. No candidate tool list was derived: with no contract
+  in the repo there are no real operationIds to bind to, and inventing tool names would
+  be fabrication.

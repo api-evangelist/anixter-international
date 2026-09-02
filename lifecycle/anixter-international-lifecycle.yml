@@ -1,0 +1,55 @@
+generated: '2026-09-02'
+method: searched
+source: >-
+  Wesco/Anixter merger and rebrand announcements already recorded in apis.yml, plus live
+  probes for a status page, versioning policy and deprecation policy
+provider: Anixter International
+providerId: anixter-international
+description: >-
+  Lifecycle posture for Anixter International. Anixter is a brand inside Wesco
+  International, not an independent operator: Wesco completed its acquisition of Anixter
+  in June 2020 and the combined business now trades as Wesco Anixter. No API versioning
+  policy, deprecation policy, SLA or status page is published on any reachable Anixter or
+  Wesco surface.
+company_lifecycle:
+  status: acquired
+  acquirer: Wesco International
+  acquired: '2020-06'
+  consideration: approximately USD 4.5 billion
+  current_brand: Wesco Anixter
+  brand_retired: false
+  note: >-
+    anixter.com is still served (behind a Cloudflare challenge) rather than redirected to
+    wesco.com, so the Anixter surface has not been folded away. Treat this profile as a
+    brand of Wesco International, cross-referenced by the ParentCompany pointer in
+    apis.yml.
+versioning:
+  documented: false
+  scheme: null
+  evidence: No versioning policy found on any reachable host.
+deprecation_policy:
+  documented: false
+  sunset_header: unknown
+  deprecation_header: unknown
+  evidence: >-
+    No deprecation policy published; RFC 8594 Sunset/Deprecation header support could not
+    be observed because no callable API endpoint is documented. No Deprecation pointer is
+    emitted in apis.yml.
+sla:
+  documented: false
+  evidence: No API SLA published. Distribution and supply-chain service levels are negotiated per customer contract.
+status_page:
+  present: false
+  url: null
+  evidence:
+    - url: https://status.anixter.com
+      status: '<no response>'
+      note: Host does not resolve.
+    - url: https://status.wesco.com
+      status: '<no response>'
+      note: Host does not resolve.
+  note: No StatusPage pointer is emitted in apis.yml — none exists.
+deprecated_operations: []
+note: >-
+  deprecated_operations is empty because there is no OpenAPI in this repo to derive it
+  from, not because the provider has declared that nothing is deprecated.

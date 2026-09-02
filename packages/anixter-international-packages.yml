@@ -1,0 +1,49 @@
+generated: '2026-09-02'
+method: searched
+source: >-
+  registry.npmjs.org search, pypi.org/pypi/<name>/json, api.github.com/orgs, and the
+  Anixter/Wesco public web surface
+provider: Anixter International
+providerId: anixter-international
+description: >-
+  First-party client library / SDK inventory for Anixter International (Wesco Anixter).
+  NONE FOUND. Anixter's published integration surface is EDI and punchout catalog
+  onboarding, both of which are negotiated per customer rather than consumed through a
+  client library, and no first-party package exists in any public registry.
+package_count: 0
+official_package_count: 0
+packages: []
+registries_searched:
+  - registry: npm
+    query: registry.npmjs.org/-/v1/search?text=anixter
+    results: 0
+    version: null
+    published: null
+    note: Zero results. A separate search for "wesco" returned two unrelated third-party packages (@dylandepass/synergy-dna, wesco-test-button), neither published by Wesco International.
+  - registry: pypi
+    query: pypi.org/pypi/anixter/json, /wesco/json, /anixter-api/json
+    results: 0
+    version: null
+    published: null
+    note: All three 404.
+  - registry: github
+    query: api.github.com/orgs/anixter, /anixter-international, /wescodist
+    results: 0
+    version: null
+    published: null
+    note: >-
+      No Anixter GitHub organization exists (404). The parent company's verified org,
+      github.com/WESCO-International (blog https://wesco.com), exists but publishes 0
+      public repositories. github.com/Wesco has 29 public repos but carries no name,
+      blog, or description tying it to Wesco International, so ownership is unproven and
+      it is NOT recorded as first-party.
+  - registry: maven-central
+    query: not searched
+    results: 0
+    version: null
+    published: null
+    note: Not searched — no Java SDK is referenced anywhere on the provider surface, and no docs host was readable to seed a coordinate.
+note: >-
+  No SDKs pointer is emitted in apis.yml. sdk_count is genuinely zero, and an SDKs
+  pointer over an empty inventory would assert client libraries the provider does not
+  ship.

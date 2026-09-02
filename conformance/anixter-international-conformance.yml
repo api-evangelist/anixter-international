@@ -1,0 +1,102 @@
+generated: '2026-09-02'
+method: searched
+source: >-
+  https://www.anixter.com/en_us/services-and-solutions/supply-chain-services/ecommerce/integrations.html
+  (page content read from the search index; the live URL answers 403 behind a Cloudflare
+  managed challenge) plus live probes of api.wesco.com and Anypoint Exchange
+provider: Anixter International
+providerId: anixter-international
+description: >-
+  Cross-cutting and domain standard conformance for Anixter International (Wesco
+  Anixter). Anixter's integration surface is B2B supply-chain rather than REST: EDI for
+  transactional documents and punchout catalogs for eProcurement. Both are real,
+  provider-documented standards families, but neither is DECLARED in a machine-readable
+  contract, because no contract is published — so none of these entries can satisfy the
+  contract-read domain_standard_conformance check.
+conformance:
+  - id: edi
+    name: Electronic Data Interchange (ANSI X12 / EDIFACT family)
+    conforms: true
+    evidence: >-
+      Anixter's eCommerce integrations page states that EDI allows customers to
+      collaborate electronically with Anixter on order information, purchase orders,
+      invoices and shipping notices. The document types named map to the X12 850/810/856
+      transaction sets, but Anixter does NOT publish the transaction-set numbers, the
+      standard version, or an implementation guide, so no specific transaction set is
+      asserted here.
+    evidence_url: https://www.anixter.com/en_us/services-and-solutions/supply-chain-services/ecommerce/integrations.html
+    declared_in_contract: false
+    confidence: medium
+  - id: punchout
+    name: PunchOut catalog (eProcurement round trip)
+    conforms: true
+    evidence: >-
+      The same page states that punchout catalogs / punchout websites allow access to
+      Anixter's products from within a customer's procurement or eProcurement system.
+      The wire protocol flavor (cXML PunchOut, SAP OCI, or Ariba-specific) is NOT
+      published, so no protocol is asserted.
+    evidence_url: https://www.anixter.com/en_us/services-and-solutions/supply-chain-services/ecommerce/integrations.html
+    declared_in_contract: false
+    confidence: medium
+  - id: flat-file-catalog
+    name: Flat file catalog delivery
+    conforms: true
+    evidence: >-
+      Flat file catalog delivery is named on the integrations page alongside custom
+      invoicing and consolidated billing. No schema, delimiter spec, or sample file is
+      published.
+    evidence_url: https://www.anixter.com/en_us/services-and-solutions/supply-chain-services/ecommerce/integrations.html
+    declared_in_contract: false
+    confidence: medium
+  - id: oauth2
+    conforms: false
+    evidence: No OAuth 2.0 authorization server is advertised. /.well-known/oauth-authorization-server returns 403 on every anixter.com/wesco.com host and 404 on api.wesco.com.
+  - id: oidc
+    conforms: false
+    evidence: /.well-known/openid-configuration returns 403 (Cloudflare challenge) on the website hosts and 404 on api.wesco.com.
+  - id: rfc9457
+    conforms: false
+    evidence: No published error contract or problem+json media type — no machine-readable contract of any kind is published.
+  - id: pagination
+    conforms: false
+    evidence: No published REST contract in which a pagination convention could be observed.
+  - id: idempotency
+    conforms: false
+    evidence: No published REST contract; no idempotency header is documented on any reachable Anixter or Wesco surface.
+  - id: odata
+    conforms: false
+    evidence: No $metadata surface found on any probed host.
+  - id: scim
+    conforms: false
+    evidence: No SCIM schema URN found; Anixter publishes no identity provisioning surface.
+domain_standard:
+  candidate_standards:
+    - ANSI X12 (EDI transaction sets)
+    - cXML PunchOut / SAP OCI
+  declared_in_contract: false
+  note: >-
+    0.12.0 domain_standard_conformance reads the CONTRACT, not a marketing page. Anixter
+    names EDI and punchout in prose but publishes no OpenAPI, WSDL, XSD, cXML DTD
+    reference or implementation guide at a public URL, so there is no contract location
+    to point evidence at. This is the single highest-leverage gap on this profile: a
+    published cXML/X12 implementation guide would convert two documented capabilities
+    into a scored, machine-verifiable conformance.
+api_platform:
+  vendor: MuleSoft Anypoint Platform
+  evidence:
+    - url: https://anypoint.mulesoft.com/exchange/api/v2/portals/anixter
+      status: 200
+      finding: 'Anypoint organization domain "anixter" exists with a public Exchange portal, status: enabled'
+    - url: https://anypoint.mulesoft.com/exchange/api/v2/assets?domain=anixter&limit=50
+      status: 200
+      finding: 'Zero public assets published ([])'
+    - url: https://anypoint.mulesoft.com/exchange/api/v2/portals/zzznotarealportal12345
+      status: 404
+      finding: 'Control probe — a non-existent org 404s, proving the two hits above are real and not an SPA catch-all'
+    - url: https://api.wesco.com/
+      status: 403
+      finding: 'Resolves to api-wesco.lb.anypointdns.net (Anypoint dedicated load balancer); HSTS max-age=31536000; every probed path 404s'
+  note: >-
+    An API management platform is genuinely in place across the Wesco Anixter family, and
+    the public Exchange portal is switched ON — it just has nothing published to it. The
+    API program exists; the public catalog is empty.

@@ -1,0 +1,72 @@
+generated: '2026-09-02'
+method: searched
+source: >-
+  https://www.anixter.com/en_us/services-and-solutions/supply-chain-services/ecommerce/integrations.html
+  (indexed content; live URL 403 behind a Cloudflare managed challenge) plus live host probes
+provider: Anixter International
+providerId: anixter-international
+description: >-
+  Cross-cutting runtime semantics for Anixter International. Anixter does not operate a
+  public REST API: its documented integration surface is EDI document exchange, punchout
+  catalog round trips, and flat file catalog delivery, all provisioned per customer
+  through a commercial onboarding conversation. Every convention below is therefore
+  recorded as undocumented rather than as a value we inferred.
+auth_style:
+  documented: false
+  scheme: null
+  note: >-
+    No authentication scheme is published. EDI and punchout connections are credentialed
+    during customer onboarding (trading partner IDs, punchout shared secrets), which is
+    per-customer configuration, not a documented public auth model.
+idempotency:
+  supported: na
+  header: null
+  scope: null
+  retention: null
+  note: >-
+    na — there is no documented programmatic write surface whose repetition could be made
+    idempotent. No Idempotency pointer is emitted in apis.yml.
+pagination:
+  documented: false
+  style: null
+  params: []
+  response_fields: []
+field_expansion:
+  documented: false
+metadata:
+  documented: false
+request_id_tracing:
+  documented: false
+  header: null
+versioning:
+  documented: false
+  see: lifecycle/anixter-international-lifecycle.yml
+error_envelope:
+  documented: false
+  format: null
+  note: >-
+    No error catalog exists in this repo. EDI acknowledgements (X12 997/999 functional
+    acknowledgement) would be the natural error channel for this surface, but Anixter
+    publishes no implementation guide stating which it returns, so nothing is asserted.
+rate_limit_signaling:
+  documented: false
+  see: rate-limits/anixter-international-rate-limits.yml
+dry_run_mode:
+  supported: na
+  note: na — no documented programmatic write surface to rehearse against.
+reversibility:
+  state: na
+  grade: na
+  note: >-
+    na, not zero. Anixter publishes no callable write operations, so there is no reversal
+    operation to name and no window to state. The commercial reality behind the surface —
+    a purchase order transmitted by EDI is cancelled or amended through the trading
+    relationship, and returns run through Anixter's RMA process — is a business process,
+    not an API affordance, and asserting a window for it would invent a number the docs
+    do not state.
+  write_surfaces: []
+cross_references:
+  - lifecycle/anixter-international-lifecycle.yml
+  - conformance/anixter-international-conformance.yml
+  - rate-limits/anixter-international-rate-limits.yml
+  - plans/anixter-international-plans-pricing.yml

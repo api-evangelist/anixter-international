@@ -104,8 +104,29 @@ common:
   - url: https://www.anixter.com/en_us/about-us/contact.html
     name: Contact Anixter
     type: Contact
+  - url: llms/anixter-international-llms.txt
+    name: llms.txt
+    type: LLMsTxt
+  - url: conformance/anixter-international-conformance.yml
+    name: Standards Conformance
+    type: Conformance
+  - url: conventions/anixter-international-conventions.yml
+    name: API Conventions
+    type: Conventions
+  - url: lifecycle/anixter-international-lifecycle.yml
+    name: Lifecycle
+    type: Lifecycle
+  - url: plans/anixter-international-plans-pricing.yml
+    name: Plans and Pricing
+    type: Plans
+  - url: rate-limits/anixter-international-rate-limits.yml
+    name: Rate Limits
+    type: RateLimits
+  - url: packages/anixter-international-packages.yml
+    name: Packages
+    type: Packages
 created: '2026-03-23'
-modified: '2026-04-19'
+modified: '2026-09-02'
 specificationVersion: '0.23'
 description: >-
   Anixter International was a leading global distributor of network and security
@@ -115,3 +136,35 @@ description: >-
   revenue. Anixter now operates as Wesco Anixter, providing B2B distribution,
   supply chain services, and digital integration capabilities including EDI,
   punchout catalogs, and procurement system integrations.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+  - FN: APIs.json
+    email: info@apis.io
+x-enrichment:
+  date: '2026-09-02'
+  status: minimal
+  artifacts_added: 7
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: partner-login
+  detail: >-
+    Anixter runs a real MuleSoft Anypoint API platform — api.wesco.com resolves to
+    api-wesco.lb.anypointdns.net and the Anypoint Exchange organization domain "anixter"
+    has its public portal switched on — but that portal publishes zero public assets, so
+    every API asset sits behind an Anypoint login, and the eCommerce integrations page
+    that describes the EDI and punchout surface answers 403 behind a Cloudflare managed
+    challenge on top of it.
+  evidence:
+    - url: https://anypoint.mulesoft.com/exchange/api/v2/portals/anixter
+      status: 200
+    - url: https://anypoint.mulesoft.com/exchange/api/v2/assets?domain=anixter&limit=50
+      status: 200
+    - url: https://anypoint.mulesoft.com/exchange/api/v2/portals/zzznotarealportal12345
+      status: 404
+    - url: https://www.anixter.com/en_us/services-and-solutions/supply-chain-services/ecommerce/integrations.html
+      status: 403
+    - url: https://api.wesco.com/.well-known/api-catalog
+      status: 404
+  checked: '2026-09-02'

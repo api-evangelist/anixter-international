@@ -1,0 +1,77 @@
+# Anixter International
+
+> Anixter International was a leading global distributor of network and security solutions,
+> electrical and electronic solutions, and utility power solutions. Wesco International
+> completed its acquisition of Anixter in June 2020 for approximately USD 4.5 billion, and
+> the combined business now trades as Wesco Anixter. Anixter's published integration
+> surface is B2B supply chain — EDI, punchout catalogs, flat file catalog delivery, custom
+> invoicing and consolidated billing — not a public developer API.
+
+Generated: 2026-09-02
+Method: generated
+Source: apis.yml and the artifacts in this repository (github.com/api-evangelist/anixter-international)
+Publisher: API Evangelist — this is an independent third-party profile, not a document published by Anixter.
+
+## What an agent needs to know first
+
+Anixter publishes NO machine-readable contract. There is no OpenAPI, no AsyncAPI, no
+GraphQL SDL, no WSDL, no Postman collection, no MCP server and no A2A agent card at any
+host in the Anixter or Wesco family. Every /.well-known/ path on www.anixter.com,
+anixter.com, www.wesco.com and wesco.com answers HTTP 403 behind a Cloudflare managed
+challenge; every /.well-known/ path on api.wesco.com answers 404.
+
+An API management platform IS in place. api.wesco.com resolves to
+api-wesco.lb.anypointdns.net, a MuleSoft Anypoint Platform dedicated load balancer, and
+the Anypoint Exchange organization domain "anixter" exists with its public portal switched
+on — but it publishes zero public assets. The API program is real; the public catalog is
+empty. Integration is arranged through a commercial conversation, not self-serve signup.
+
+## Integration surface (documented in prose, not in a contract)
+
+- EDI — electronic exchange of order information, purchase orders, invoices and shipping
+  notices with Anixter. Transaction set numbers, standard version and implementation guide
+  are not published.
+- Punchout catalogs — access to Anixter's product catalog from inside a customer's
+  procurement or eProcurement system. The wire protocol (cXML PunchOut, SAP OCI, Ariba) is
+  not published.
+- Flat file catalog delivery, custom invoicing, consolidated billing.
+
+## Pages
+
+- Anixter website (now Wesco Anixter): https://www.anixter.com/en_us.html
+- Wesco International website: https://www.wesco.com/
+- eCommerce solutions: https://www.anixter.com/en_us/services-and-solutions/supply-chain-services/ecommerce.html
+- Digital integrations (EDI, punchout, catalogs): https://www.anixter.com/en_us/services-and-solutions/supply-chain-services/ecommerce/integrations.html
+- Contact: https://www.anixter.com/en_us/about-us/contact.html
+- Wesco Anixter brand announcement: https://www.wesco.com/us/en/our-company/news-and-insights/press-releases/new-wesco-anixter-brand-underscores-commitment-to-innovation.html
+- Merger completion: https://www.anixter.com/en_mx/about-us/news-and-events/news/wesco-international-announces-completion-of-merger-with-anixter-.html
+
+All of the above answer HTTP 403 to an automated client: Cloudflare serves a managed
+challenge rather than the page. They are live for a human browser; they are not fetchable
+by an agent.
+
+## Artifacts in this profile
+
+- conformance/anixter-international-conformance.yml — EDI, punchout and flat-file conformance, plus the Anypoint platform evidence
+- conventions/anixter-international-conventions.yml — runtime semantics, all undocumented; reversibility na
+- lifecycle/anixter-international-lifecycle.yml — acquisition history; no versioning, deprecation, SLA or status page
+- plans/anixter-international-plans-pricing.yml — plan_count 0, no published pricing
+- rate-limits/anixter-international-rate-limits.yml — limit_count 0, no published limits or headers
+- packages/anixter-international-packages.yml — package_count 0, no first-party SDK in any registry
+- mcp/anixter-international-mcp.yml — deployment mode none
+- well-known/anixter-international-well-known.yml — full probe record, nothing served
+- security/anixter-international-domain-security.yml — TLS 1.3 on both domains, SPF and DMARC p=reject, no DNSSEC, no CAA, no HSTS
+- press/ and search/ — harvested press releases and coverage
+
+## What is NOT here, and why
+
+No a2a/ agent card: none is served, and an agent card is the one artifact this pipeline
+will never author on a provider's behalf. No skills/, overlays/, errors/, scopes/,
+authentication/ or data-model/: every one of those is derived from a contract, and there is
+no contract to derive them from.
+
+## Parent company
+
+Wesco International — https://apis.io/providers/wesco-international/ — acquired Anixter in
+June 2020. api.wesco.com is Wesco's host, not Anixter's, and is recorded in this profile
+only as the nearest reachable API host in the family.
