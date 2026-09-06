@@ -168,3 +168,5 @@ x-coverage:
     - url: https://api.wesco.com/.well-known/api-catalog
       status: 404
   checked: '2026-09-02'
+x-parent: wesco-international
+x-relationship: acquisition
