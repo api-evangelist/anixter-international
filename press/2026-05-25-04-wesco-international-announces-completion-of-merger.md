@@ -1,7 +1,9 @@
 ---
 title: WESCO International Announces Completion of Merger ...
 url: https://www.sdmmag.com/articles/98194-wesco-international-announces-completion-of-merger-with-anixter
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Anixter International" press release artificial intelligence'
 position: 4
 source: serpapi-google

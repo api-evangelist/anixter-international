@@ -1,7 +1,9 @@
 ---
 title: WESCO International and Anixter ...
 url: https://www.prnewswire.com/news-releases/wesco-international-and-anixter-international-announce-merger-agreement-to-create-a-premier-electrical-and-data-communications-distribution-and-supply-chain-services-company-300985474.html
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Anixter International" press release artificial intelligence'
 position: 2
 source: serpapi-google
